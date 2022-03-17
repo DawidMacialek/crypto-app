@@ -1,0 +1,382 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.spinner-loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+.app {
+  display: flex;
+  overflow: hidden;
+
+  flex-direction: column;
+  margin: 0 auto;
+}
+.main {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 150px 5px;
+  padding-bottom: 50px;
+  min-height: 100vh;
+  background-color: #eee;
+}
+.nav-container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin-bottom: 120px;
+  z-index: 1000;
+  margin: 0 auto;
+  background-color: #343a40;
+  width: 100%;
+  padding: 20px 40px 20px 20px;
+  transition: padding 0.3s;
+}
+.nav-container.folded {
+  padding: 0 40px 0 20px;
+}
+
+.logo {
+  margin-right: 70px;
+  font-size: 32px;
+}
+img.logo-icon {
+  height: 60px;
+  margin: 0 20px;
+  color: #3483eb;
+}
+#responsive-navbar-nav {
+  justify-content: flex-end;
+  /* padding-right: 150px; */
+}
+.link {
+  font-size: 20px;
+  margin: 0 10px;
+  color: #3483eb;
+}
+
+.homepage-container h2 {
+  text-align: center;
+  padding: 20px 0;
+}
+.stats-value {
+  font-size: 26px;
+}
+.stats-title {
+  font-size: 16px;
+  color: #bbb;
+}
+.card-homepage {
+  padding-left: 20px;
+}
+.heading-crypto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 3%;
+}
+.show-more-btn {
+  text-decoration: none;
+}
+.crypto-container {
+  padding: 0 25px;
+  margin: 0 auto;
+}
+
+.search-input {
+  min-width: 200px;
+  width: 20%;
+  margin: 0 50px;
+  margin-top: 20px;
+}
+.card-heading {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+}
+.card-crypto {
+  margin: 20px 10px;
+  transition: 0.3s;
+}
+.card-link {
+  text-decoration: none;
+}
+.card-title {
+  font-size: 26px;
+  margin-bottom: 0;
+  color: #000;
+}
+.card-img {
+  width: 30px;
+}
+.card-values {
+  font-weight: 600;
+  padding-left: 10px;
+}
+.daily-change {
+  font-weight: 600;
+  padding-left: 10px;
+  color: green;
+}
+.daily-change.red {
+  color: red;
+}
+.card-crypto:hover {
+  -webkit-box-shadow: 0px 0px 9px 0px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 0px 0px 9px 0px rgba(66, 68, 90, 1);
+  box-shadow: 0px 0px 9px 0px rgba(66, 68, 90, 1);
+}
+/* News */
+.provider-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.card-news-img-provider {
+  width: 30px;
+  margin: 3px;
+}
+.card-news-provider,
+.card-news-date-published {
+  font-size: 12px;
+}
+.card-news-date-published {
+  flex: 1;
+  text-align: right;
+}
+.card-link {
+  text-decoration: none;
+  color: #000;
+}
+.search-select-news {
+  min-width: 200px;
+  width: auto;
+  margin: 20px 50px;
+}
+.crypto-news-container {
+  padding: 0 25px;
+  margin: 0 auto;
+}
+.card-news-title {
+  font-size: 18px;
+}
+.news-description {
+  font-size: 14px;
+  color: #000;
+}
+.card-news-img {
+  width: 60px;
+}
+.cryptoDetails-container {
+  padding: 20px 50px;
+}
+.cryptoDetails-heading {
+  margin: 0 auto;
+  text-align: center;
+}
+.timeperiod-coindetails-input {
+  width: 150px;
+}
+.chart-container {
+  margin: 0 auto;
+}
+.basic-info-stats {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+.stats-coinDetails-cointainer {
+  margin-top: 30px;
+}
+.basic-stats-label {
+  font-weight: 400;
+}
+.stats-coinDetails-label {
+  padding: 20px;
+}
+.stats-coinDetails-label h3 {
+  padding: 30px;
+}
+.stats-coinDetails-label p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+.list-group-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 40px;
+}
+.list-group-container a {
+  text-decoration: none;
+  color: #000;
+}
+.list-group-stats-value {
+  font-weight: 600;
+}
+.coin-descreption-container {
+  margin-top: 50px;
+}
+.coin-descreption-container h3 {
+  padding: 30px;
+}
+.coin-descreption-container p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+/* Footer */
+.footer-container {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #343a40;
+  padding: 20px 10%;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+}
+.footer-link {
+  color: #fff;
+  padding: 0 20px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+.footer-link:hover {
+  color: #3483eb;
+  transform: translateY(-1px);
+  transform-origin: center;
+}
+.footer-stamp {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  color: #fff;
+}
+/* Exchanges Markets styling */
+.exchange-img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+.exchange-values {
+  text-align: center;
+}
+.link-title {
+  text-align: center;
+}
+.link-title a:visited {
+  color: green;
+}
+.exchange-list {
+  padding: 20px 8%;
+  font-size: 22px;
+}
+/* media queries */
+@media (max-width: 750px) {
+  .footer-container {
+    flex-direction: column;
+    padding: 20px 1%;
+  }
+  .exchange-list {
+    padding: 20px 2%;
+    font-size: 16px;
+  }
+  .exchange-img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  .footer-stamp {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+  }
+  .footer-links {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (min-width: 1200px) {
+  #responsive-navbar-nav {
+    padding-right: 150px;
+    font-size: 20px;
+  }
+  .main {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .nav-container {
+    padding-left: 80px;
+  }
+  .nav-container.folded {
+    padding-left: 80px;
+  }
+  a.link {
+    font-size: 24px;
+  }
+}
+@media (min-width: 2300px) {
+  #responsive-navbar-nav {
+    padding-right: 350px;
+  }
+  .logo {
+    padding-left: 250px;
+  }
+}
+@media (max-width: 500px) {
+  .nav-container {
+    padding-right: 20px;
+  }
+  .nav-container.folded {
+    padding: 0 10px 0 20px;
+  }
+  .logo {
+    margin-right: 20px;
+    font-size: 26px;
+  }
+  img.logo-icon {
+    height: 40px;
+    margin-right: 10px;
+    margin-left: 0;
+  }
+  .logo.navbar-brand {
+    color: red;
+  }
+  a.show-more-btn {
+    font-size: 16px;
+  }
+  .heading-crypto h3 {
+    font-size: 18px;
+  }
+  .search-select-news {
+    margin: 10px auto;
+    width: 100px;
+  }
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cryptoDetails-container {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .crypto-container {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .crypto-news-container {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
