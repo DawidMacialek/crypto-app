@@ -14,8 +14,6 @@ function Homepage() {
   if (isFetching)
     return <Spinner animation='border' className='spinner-loading' />;
 
-  console.log(globalStats);
-
   return (
     <div className='homepage-container'>
       <h2>Global Crypto Stats</h2>

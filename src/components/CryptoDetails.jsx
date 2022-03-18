@@ -101,7 +101,7 @@ function CryptoDetails() {
     },
   ];
   const timePeriodToChoose = ['3h', '24h', '7d', '30d', '1y', '3m', '3y', '5y'];
-  console.log(cryptoDetails);
+
   return (
     <div className='cryptoDetails-container'>
       <Col className='cryptoDetails-heading'>
@@ -148,8 +148,8 @@ function CryptoDetails() {
             onChange={(e) => setTimeperiod(e.target.value)}
             value={timeperiod}
           >
-            {timePeriodToChoose.map((date) => {
-              return <option key={date}>{date}</option>;
+            {timePeriodToChoose.map((date, i) => {
+              return <option key={i}>{date}</option>;
             })}
           </Form.Select>
         </Col>
@@ -167,9 +167,9 @@ function CryptoDetails() {
             </p>
           </div>
           <ListGroup variant='flush'>
-            {stats.map((stat) => {
+            {stats.map((stat, i) => {
               return (
-                <ListGroup.Item className='list-group-container'>
+                <ListGroup.Item key={i} className='list-group-container'>
                   <span>
                     {stat.icon} {stat.title}
                   </span>
@@ -188,12 +188,9 @@ function CryptoDetails() {
             </p>
           </div>
           <ListGroup variant='flush'>
-            {otherStats.map((stat) => {
+            {otherStats.map((stat, i) => {
               return (
-                <ListGroup.Item
-                  key={stat.name}
-                  className='list-group-container'
-                >
+                <ListGroup.Item key={i} className='list-group-container'>
                   <span>
                     {stat.icon} {stat.title}
                   </span>
@@ -216,12 +213,9 @@ function CryptoDetails() {
         <Col>
           <h3>{cryptoDetails.name} Links</h3>
           <ListGroup variant='flush'>
-            {cryptoDetails?.links?.map((link) => {
+            {cryptoDetails?.links?.map((link, i) => {
               return (
-                <ListGroup.Item
-                  key={link.name}
-                  className='list-group-container'
-                >
+                <ListGroup.Item key={i} className='list-group-container'>
                   <span>{link.type}</span>
                   <a href={link.url} target='_blank' rel='noreferrer'>
                     {link.name}

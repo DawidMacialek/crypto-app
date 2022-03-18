@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
 
 function CryptoDetailsChart({ coinHistory }) {
   const coinPrice = [];
   const coinTimestamp = [];
+  const [chartWidth, setChartWidth] = useState(true);
+  const [screenWidth, setScreenWidth] = useState();
+
+  useEffect(() => {
+    function changeChartWidth() {
+      setScreenWidth(window.innerWidth);
+
+      if (screenWidth < 1000) {
+        setChartWidth(false);
+      } else {
+        setChartWidth(true);
+      }
+    }
+    changeChartWidth();
+    window.addEventListener('resize', changeChartWidth);
+    return () => {
+      window.removeEventListener('resize', changeChartWidth);
+    };
+  }, [screenWidth]);
 
   for (let i = 0; i < coinHistory?.data?.history?.length; i++) {
     coinPrice.unshift(coinHistory?.data?.history[i].price);
@@ -22,12 +41,13 @@ function CryptoDetailsChart({ coinHistory }) {
         {
           ticks: {
             beginAtZero: true,
-            stepsize: 10000,
+            maxTicksLimit: 2,
           },
         },
       ],
     },
   };
+
   const data = {
     labels: coinTimestamp,
     datasets: [
@@ -37,6 +57,11 @@ function CryptoDetailsChart({ coinHistory }) {
         fill: false,
         backgroundColor: '#0071bd',
         borderColor: '#0071bd',
+        borderWidth: chartWidth ? 3 : 1,
+        pointBorderWidth: chartWidth ? 3 : 1,
+        pointBackgroundColor: '#ff000000',
+        stepSize: 10000,
+        pointRadius: chartWidth ? 3 : 1,
       },
     ],
   };
